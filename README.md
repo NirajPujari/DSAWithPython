@@ -80,21 +80,21 @@ This script:
 
 Windows
 
-    ```bash
-    python -m venv env
-    env\Scripts\activate
-    pip install -r requirements.txt
-    python src/main.py
-    ```
+```bash
+python -m venv env
+env\Scripts\activate
+pip install -r requirements.txt
+python src/main.py
+```
 
 Linux / macOS
 
-    ```bash
-    python3 -m venv env
-    source env/bin/activate
-    pip3 install -r requirements.txt
-    python3 src/main.py
-    ```
+```bash
+python3 -m venv env
+source env/bin/activate
+pip3 install -r requirements.txt
+python3 src/main.py
+```
 ## About the Project / Details
 
 This project simulates traffic behavior at a four-way junction using a circular queue and event-driven logic. Each direction of movement is modeled as a separate Lane that contains its own spawn rules, movement functions, and exit conditions.
@@ -120,4 +120,3 @@ MIT
 ## Authors
 
 - [@Niraj Pujari](https://github.com/NirajPujari)
-
