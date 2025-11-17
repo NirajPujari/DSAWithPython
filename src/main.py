@@ -3,7 +3,7 @@ from config import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, HORIZONTAL_ROAD_RECT, VERTI
 from resources import load_car_collections, load_center_images
 from ui import create_button, render_multiline, render_label
 from lane import Lane, SpawnConfig
-from traffic_controller import TrafficController, Mode
+from trafficController import TrafficController, Mode
 
 # Movement functions for lanes
 def move_r1_1(car): car.rect.x += car.speed

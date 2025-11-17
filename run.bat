@@ -10,7 +10,7 @@ call venv\Scripts\activate
 echo Installing requirements...
 pip install -r requirements.txt
 
-echo Starting the game...
-python main.py
+echo Starting program...
+python src/main.py
 
 pause

@@ -1,5 +1,5 @@
 import pygame
-from circular_queue import CircularQueue
+from circularQueue import CircularQueue
 from enum import Enum
 from typing import Callable
 from config import AUTO_DURATION_SECONDS
