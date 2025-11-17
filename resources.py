@@ -3,7 +3,8 @@ import pygame
 from config import PUBLIC_DIR
 from typing import List, Tuple
 
-PUBLIC_DIR: Path = PUBLIC_DIR  # alias for local use
+PUBLIC_DIR: Path = PUBLIC_DIR
+
 
 def load_image(name: str) -> pygame.Surface:
     """Load an image from the public dir and return a Surface with alpha."""
@@ -12,12 +13,16 @@ def load_image(name: str) -> pygame.Surface:
         raise FileNotFoundError(f"Missing asset: {path}")
     return pygame.image.load(str(path)).convert_alpha()
 
+
 def load_car_collections() -> Tuple[List[pygame.Surface], List[pygame.Surface], List[pygame.Surface], List[pygame.Surface]]:
-    V_car_images = [load_image('V_car_red.png'), load_image('V_car_green.png'), load_image('V_car_blue.png')]
-    H_car_images = [load_image('H_car_red.png'), load_image('H_car_green.png'), load_image('H_car_blue.png')]
-    V1_car_images = [load_image('V1_car_red.png'), load_image('V1_car_green.png'), load_image('V1_car_blue.png')]
-    H1_car_images = [load_image('H1_car_red.png'), load_image('H1_car_green.png'), load_image('H1_car_blue.png')]
-    return V_car_images, H_car_images, V1_car_images, H1_car_images
+    pathV = "car/vertical/"
+    pathH = "car/horizontal/"
+    downCarImages = [load_image(pathV + "downCarRed.png"), load_image(pathV + "downCarGreen.png"), load_image(pathV + "downCarBlue.png")]
+    rightCarImages = [load_image(pathH + "rightCarRed.png"), load_image(pathH + "rightCarGreen.png"), load_image(pathH + "rightCarBlue.png")]
+    topCarImages = [load_image(pathV + "topCarRed.png"), load_image(pathV + "topCarGreen.png"), load_image(pathV + "topCarBlue.png")]
+    leftCarImages = [load_image(pathH + "leftCarRed.png"), load_image(pathH + "leftCarGreen.png"), load_image(pathH + "leftCarBlue.png")]
+    return downCarImages, rightCarImages, topCarImages, leftCarImages
+
 
 def load_center_images() -> Tuple[pygame.Surface, pygame.Surface, pygame.Surface, pygame.Surface]:
-    return load_image('R1.png'), load_image('R2.png'), load_image('R3.png'), load_image('R4.png')
+    return (load_image("center/route1.png"), load_image("center/route2.png"), load_image("center/route3.png"), load_image("center/route4.png"))

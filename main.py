@@ -32,7 +32,7 @@ def main():
     clock = pygame.time.Clock()
 
     # Load assets
-    V_car_images, H_car_images, V1_car_images, H1_car_images = load_car_collections()
+    downCarImages, rightCarImages, topCarImages, leftCarImages = load_car_collections()
     r1_image, r2_image, r3_image, r4_image = load_center_images()
 
     # UI
@@ -55,14 +55,14 @@ def main():
     R4_label = render_label(pygame.font.SysFont("timesnewroman", 30), 'R4', (255,255,255), (600,950))
 
     # Create lanes with SpawnConfig and exit checks
-    lane_r1_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV := 100, (-100, 425), move_r1_1, H_car_images), exit_r1_1)
-    lane_r1_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (850, 425), move_r1_2, H_car_images), exit_generic_right)
-    lane_r2_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (775, 0), move_r2_1, V_car_images), exit_r2_1)
-    lane_r2_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (775, 600), move_r2_2, V_car_images), exit_generic_bottom)
-    lane_r3_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (1500, 550), move_r3_1, H1_car_images), exit_r3_1)
-    lane_r3_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (575, 550), move_r3_2, H1_car_images), exit_generic_left)
-    lane_r4_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (675, 900), move_r4_1, V1_car_images), exit_r4_1)
-    lane_r4_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (675, 350), move_r4_2, V1_car_images), exit_generic_top)
+    lane_r1_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV := 100, (-100, 425), move_r1_1, rightCarImages), exit_r1_1)
+    lane_r1_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (850, 425), move_r1_2, rightCarImages), exit_generic_right)
+    lane_r2_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (775, 0), move_r2_1, downCarImages), exit_r2_1)
+    lane_r2_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (775, 600), move_r2_2, downCarImages), exit_generic_bottom)
+    lane_r3_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (1500, 550), move_r3_1, leftCarImages), exit_r3_1)
+    lane_r3_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (575, 550), move_r3_2, leftCarImages), exit_generic_left)
+    lane_r4_1 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (675, 900), move_r4_1, topCarImages), exit_r4_1)
+    lane_r4_2 = Lane(SpawnConfig(SPAWN_CHANCE_INV, (675, 350), move_r4_2, topCarImages), exit_generic_top)
 
     # group all lanes for convenience
     lanes = [lane_r1_1, lane_r1_2, lane_r2_1, lane_r2_2, lane_r3_1, lane_r3_2, lane_r4_1, lane_r4_2]
